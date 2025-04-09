@@ -1,6 +1,7 @@
 # DASS: Distilled Audio State Space Models Are Stronger and More Duration-Scalable Learners
 
 ## Introduction  
+[![Huggingface](https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-DASS-orange)](https://huggingface.co/saurabhati/DASS_small_AudioSet_48.9) [![arXiv](https://img.shields.io/badge/arXiv-2407.04082-b31b1b.svg)](https://arxiv.org/pdf/2407.04082) [![Pretrained models](https://img.shields.io/badge/pretrained%20models-8A2BE2)](https://github.com/Saurabhbhati/DASS/releases)
 
 <p align="center">
   <img src="DASS_overview.png" alt="Overview of the DASS." width="40%">
@@ -8,7 +9,7 @@
 
 This repository contains cleaned up (ongoing) code (in PyTorch) for **DASS** model proposed in the SLT 2024 (accepted) [DASS: Distilled Audio State Space Models Are Stronger and More Duration-Scalable Learners](https://arxiv.org/pdf/2407.04082) (Saurabhchand Bhati, Yuan Gong, Leonid Karlinsky, Hilde Kuehne, Rogerio Feris, James Glass).
 
-DASS is the first state-space model that outperforms transformer-based audio classifiers such as AST, HTS-AT, and Audio-MAE. We use the AudioSet dataset for training and evaluation, where DASS achieves a new state-of-the-art mAP of 47.6 on AudioSet. We use knowledge distillation (KD) from a transformer based model, AST, to train the model as shown in Fig 1(a). KD is an integral part of DASS, helping DASS outperform the AST teacher, Fig 1(b).   
+DASS is the first state-space model that outperforms transformer-based audio classifiers such as AST, HTS-AT, and Audio-MAE. We use the AudioSet dataset for training and evaluation, where DASS achieves a new state-of-the-art mAP of 47.6 on AudioSet. We use knowledge distillation (KD) from a transformer based model, AST, to train the model as shown in Fig 1(a). KD is an integral part of DASS, helping DASS outperform the AST teacher, Fig 1(b). We have recently added DASS model distilled from an ensemble of AST and HTS-AT which sigificantly boosts the performance of DASS.   
 
 |                                           | Params | Pretrain |  mAP |
 |-------------------------------------------|:------:|:--------:|:----:|
@@ -16,12 +17,16 @@ DASS is the first state-space model that outperforms transformer-based audio cla
 | [AST](https://arxiv.org/pdf/2104.01778)                 |   87M  |   IN SL  | 45.9 |
 | [HTS-AT](https://arxiv.org/pdf/2202.00874)              |   31M  |   IN SL  | 47.1 |
 | [PaSST](https://arxiv.org/pdf/2110.05069)         |        |   IN SL  | 47.1 |
-| [Audio-MAE](https://arxiv.org/pdf/2207.06405) |   86M  |    SSL   | 47.3 |
+| [Audio-MAE](https://arxiv.org/pdf/2207.06405)           |   86M  |    SSL   | 47.3 |
+| [BEATS_iter3](https://arxiv.org/pdf/2212.09058)         | 90M | AS SSL | 48.0 |
+| [EAT](https://arxiv.org/pdf/2401.03497v1)     | 88M |  AS SSL | 48.6 |
 | Concurrent SSM models                     |        |          |      |
 | [AuM](https://arxiv.org/pdf/2406.03344)               |   26M  |   IN SL  | 39.7 |
 | [Audio Mamba](https://arxiv.org/pdf/2405.13636)         |   40M  |   IN SL  | 44.0 |
 | DASS-Small                                |   30M  |   IN SL  | 47.2 |
 | DASS-Medium                               |   49M  |   IN SL  | 47.6 |
+| DASS-Small (teach: AST + HTS-AT)           |   30M  |   IN SL  | 48.6 |
+| DASS-Medium (teach: AST + HTS-AT)          |   49M  |   IN SL  | 48.9 |
 
 
 The DASS model file is in `src/models/ast_models.py`, the recipes are in `egs/audioset/run.sh`, when you run `run.sh`, it will call `/src/run.py`, which will then call `/src/dataloader.py` and `/src/traintest.py`, which will then call `/src/models/ast_models.py`.
