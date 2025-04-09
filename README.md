@@ -3,13 +3,16 @@
 ## Introduction  
 [![Huggingface](https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-DASS-orange)](https://huggingface.co/saurabhati/DASS_small_AudioSet_48.9) [![arXiv](https://img.shields.io/badge/arXiv-2407.04082-b31b1b.svg)](https://arxiv.org/pdf/2407.04082) [![Pretrained models](https://img.shields.io/badge/pretrained%20models-8A2BE2)](https://github.com/Saurabhbhati/DASS/releases)
 
+**Update:**
+We have recently added DASS model distilled from an ensemble of AST and HTS-AT which sigificantly boosts the performance of DASS. New performance: DASS small (30M) mAP: 48.6 and DASS medium (49M) mAP: 48.9.
+
 <p align="center">
   <img src="DASS_overview.png" alt="Overview of the DASS." width="40%">
 </p>
 
 This repository contains cleaned up (ongoing) code (in PyTorch) for **DASS** model proposed in the SLT 2024 (accepted) [DASS: Distilled Audio State Space Models Are Stronger and More Duration-Scalable Learners](https://arxiv.org/pdf/2407.04082) (Saurabhchand Bhati, Yuan Gong, Leonid Karlinsky, Hilde Kuehne, Rogerio Feris, James Glass).
 
-DASS is the first state-space model that outperforms transformer-based audio classifiers such as AST, HTS-AT, and Audio-MAE. We use the AudioSet dataset for training and evaluation, where DASS achieves a new state-of-the-art mAP of 47.6 on AudioSet. We use knowledge distillation (KD) from a transformer based model, AST, to train the model as shown in Fig 1(a). KD is an integral part of DASS, helping DASS outperform the AST teacher, Fig 1(b). We have recently added DASS model distilled from an ensemble of AST and HTS-AT which sigificantly boosts the performance of DASS.   
+DASS is the first state-space model that outperforms transformer-based audio classifiers such as AST, HTS-AT, and Audio-MAE. We use the AudioSet dataset for training and evaluation, where DASS achieves a new state-of-the-art mAP of 47.6 on AudioSet. We use knowledge distillation (KD) from a transformer based model, AST, to train the model as shown in Fig 1(a). KD is an integral part of DASS, helping DASS outperform the AST teacher, Fig 1(b). 
 
 |                                           | Params | Pretrain |  mAP |
 |-------------------------------------------|:------:|:--------:|:----:|
