@@ -4,7 +4,8 @@
 [![Huggingface](https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-DASS-orange)](https://huggingface.co/saurabhati/DASS_small_AudioSet_48.9) [![arXiv](https://img.shields.io/badge/arXiv-2407.04082-b31b1b.svg)](https://arxiv.org/pdf/2407.04082) [![Pretrained models](https://img.shields.io/badge/pretrained%20models-8A2BE2)](https://github.com/Saurabhbhati/DASS/releases)
 
 **Update:**
-We have recently added DASS model distilled from an ensemble of AST and HTS-AT which sigificantly boosts the performance of DASS. New performance: DASS small (30M) mAP: 48.6 and DASS medium (49M) mAP: 48.9.
+- **DASSv3:** DASS model distilled from SSLAM model. New performance: DASS small (30M) mAP: 50.1 and DASS medium (49M) mAP: 50.2.
+- **DASSv2:** We have recently added DASS model distilled from an ensemble of AST and HTS-AT which sigificantly boosts the performance of DASS. New performance: DASS small (30M) mAP: 48.6 and DASS medium (49M) mAP: 48.9.
 
 <p align="center">
   <img src="DASS_overview.png" alt="Overview of the DASS." width="40%">
@@ -22,14 +23,17 @@ DASS is the first state-space model that outperforms transformer-based audio cla
 | [PaSST](https://arxiv.org/pdf/2110.05069)         |        |   IN SL  | 47.1 |
 | [Audio-MAE](https://arxiv.org/pdf/2207.06405)           |   86M  |    SSL   | 47.3 |
 | [BEATS_iter3](https://arxiv.org/pdf/2212.09058)         | 90M | AS SSL | 48.0 |
-| [EAT](https://arxiv.org/pdf/2401.03497v1)     | 88M |  AS SSL | 48.6 |
+| [EAT](https://arxiv.org/pdf/2401.03497v1)               | 88M |  AS SSL | 48.6 |
+| [SSLAM](https://openreview.net/pdf?id=odU59TxdiB)       | 88M |  AS SSL | 50.2 |
 | Concurrent SSM models                     |        |          |      |
 | [AuM](https://arxiv.org/pdf/2406.03344)               |   26M  |   IN SL  | 39.7 |
 | [Audio Mamba](https://arxiv.org/pdf/2405.13636)         |   40M  |   IN SL  | 44.0 |
-| DASS-Small                                |   30M  |   IN SL  | 47.2 |
-| DASS-Medium                               |   49M  |   IN SL  | 47.6 |
+| DASS-Small                                 |   30M  |   IN SL  | 47.2 |
+| DASS-Medium                                |   49M  |   IN SL  | 47.6 |
 | DASS-Small (teach: AST + HTS-AT)           |   30M  |   IN SL  | 48.6 |
 | DASS-Medium (teach: AST + HTS-AT)          |   49M  |   IN SL  | 48.9 |
+| DASS-Small (teach: SSLAM)                  |   30M  |   IN SL  | 50.1 |
+| DASS-Medium (teach: SSLAM)                 |   49M  |   IN SL  | 50.2 |
 
 
 The DASS model file is in `src/models/ast_models.py`, the recipes are in `egs/audioset/run.sh`, when you run `run.sh`, it will call `/src/run.py`, which will then call `/src/dataloader.py` and `/src/traintest.py`, which will then call `/src/models/ast_models.py`.
