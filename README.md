@@ -1,7 +1,7 @@
 # DASS: Distilled Audio State Space Models Are Stronger and More Duration-Scalable Learners
 
 ## Introduction  
-[![Huggingface](https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-DASS-orange)](https://huggingface.co/saurabhati/DASS_small_AudioSet_48.9) [![arXiv](https://img.shields.io/badge/arXiv-2407.04082-b31b1b.svg)](https://arxiv.org/pdf/2407.04082) [![Pretrained models](https://img.shields.io/badge/pretrained%20models-8A2BE2)](https://github.com/Saurabhbhati/DASS/releases)
+[![Huggingface](https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-DASS-orange)](https://huggingface.co/saurabhati/DASS_medium_AudioSet_50.2) [![arXiv](https://img.shields.io/badge/arXiv-2407.04082-b31b1b.svg)](https://arxiv.org/pdf/2407.04082) [![Pretrained models](https://img.shields.io/badge/pretrained%20models-8A2BE2)](https://github.com/Saurabhbhati/DASS/releases)
 
 **Update:**
 - **DASSv3:** DASS model distilled from SSLAM model. New performance: DASS small (30M) mAP: 50.1 and DASS medium (49M) mAP: 50.2.
